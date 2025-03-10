@@ -48,3 +48,11 @@ function bulkUpdateEmployeeCards() {
 
 // activating bulk update function
 bulkUpdateEmployeeCards();
+
+// Task 4: Implementing Removal of Employee Crads with Event Bubbling
+
+
+console.log('Remove button has been clicked');
+        event.stopPropagation();
+        card.remove();
+    });
