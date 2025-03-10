@@ -56,3 +56,48 @@ console.log('Remove button has been clicked');
         event.stopPropagation();
         card.remove();
     });
+
+    // Task 5: Inline Editing of Employee Details
+
+
+editButton.addEventListener('click', function() {
+    const nameInput = document.createElement('input');
+    nameInput.setAttribute('type', 'text')
+    nameInput.value = heading.textContent;
+
+
+    const positionInput = document.createElement('input');
+    positionInput.setAttribute('type','text');
+    positionInput.value = paragraph.textContent;
+
+
+    const saveButton = document.createElement('button');
+    saveButton.textContent = 'Save';
+   
+    // appending new functions
+    card.innerHTML = '';
+    card.appendChild(nameInput);
+    card.appendChild(positionInput);
+    card.appendChild(saveButton);
+
+
+    // save button listener
+    saveButton.addEventListener('click', function() {
+        heading.textContent = nameInput.value;
+        paragraph.textContent = positionInput.value;
+
+
+        card.innerHTML = '';
+        card.appendChild(heading);
+        card.appendChild(paragraph);
+        card.appendChild(editButton);
+        card.appendChild(removeButton);
+    }); // event listener for save button and inner text appending
+});
+}
+
+
+// test employees
+addEmployeeCard("Bob Ross", "Artist");
+addEmployeeCard("Tom Brady", "Quarterback");
+addEmployeeCard("Donald Trump", "President");
