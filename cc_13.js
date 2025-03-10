@@ -31,3 +31,20 @@ function addEmployeeCard(name, position) { // employee card container
 
     // remove functionality
     removeButton.addEventListener('click', function(event) {
+
+        // Task 3: Converting NodeLists to Arrays for Bulk Updates
+
+
+function bulkUpdateEmployeeCards() {
+    const cards = document.querySelectorAll('.employee-card');
+    const cardArray = Array.from(cards);
+
+
+    cardArray.forEach(card => {
+        card.style.backgroundColor = 'lightgreen';
+    }); // function for bulk updating to cards
+}
+
+
+// activating bulk update function
+bulkUpdateEmployeeCards();
